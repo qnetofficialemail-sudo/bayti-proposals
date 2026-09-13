@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بيتي — عرض خاص لـ @auntyzkitchen_</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --orange: #FF5A1F;
+    --orange-light: #fff4ee;
+    --orange-mid: #ffe4cc;
+    --dark: #111827;
+    --mid: #374151;
+    --gray: #6B7280;
+    --light: #F9FAFB;
+    --white: #FFFFFF;
+    --green: #059669;
+    --green-light: #ECFDF5;
+    --border: #E5E7EB;
+  }
+  body { font-family: 'Tajawal', sans-serif; background: var(--white); color: var(--dark); max-width: 820px; margin: 0 auto; font-size: 15px; line-height: 1.7; }
+  .cover { background: linear-gradient(135deg, #fff4ee 0%, #fff9f5 60%, #f0fdf4 100%); padding: 56px 56px 48px; border-bottom: 3px solid var(--orange); }
+  .cover-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 48px; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand-icon { width: 44px; height: 44px; background: var(--orange); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+  .brand-name { font-size: 22px; font-weight: 800; color: var(--dark); }
+  .brand-name span { color: var(--orange); }
+  .cover-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: white; font-size: 11px; font-weight: 700; padding: 6px 14px; border-radius: 100px; }
+  .cover-tag { font-size: 13px; font-weight: 600; color: var(--orange); margin-bottom: 12px; }
+  .cover-title { font-size: 38px; font-weight: 900; color: var(--dark); line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 16px; max-width: 540px; }
+  .cover-sub { font-size: 16px; color: var(--gray); line-height: 1.6; max-width: 480px; margin-bottom: 32px; }
+  .cover-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 36px; }
+  .stat-card { background: white; border-radius: 16px; padding: 20px 16px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border: 1px solid var(--border); }
+  .stat-icon { font-size: 24px; margin-bottom: 6px; }
+  .stat-value { font-size: 14px; font-weight: 800; color: var(--dark); }
+  .stat-label { font-size: 11px; color: var(--gray); margin-top: 2px; }
+  .beta-banner { background: var(--dark); color: white; padding: 16px 56px; display: flex; align-items: center; gap: 16px; font-size: 14px; }
+  .beta-pill { background: var(--orange); color: white; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 100px; white-space: nowrap; }
+  .beta-text { color: #D1D5DB; }
+  .beta-text strong { color: white; }
+  .section { padding: 48px 56px; border-bottom: 1px solid var(--border); }
+  .section-label { font-size: 11px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .section-title { font-size: 26px; font-weight: 800; color: var(--dark); margin-bottom: 16px; line-height: 1.3; }
+  .section-intro { font-size: 15px; color: var(--mid); line-height: 1.8; max-width: 620px; margin-bottom: 28px; }
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+  .feature-item { background: white; padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; }
+  .feature-icon { font-size: 20px; flex-shrink: 0; }
+  .feature-title { font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
+  .feature-desc { font-size: 12px; color: var(--gray); line-height: 1.5; }
+  .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .ai-card { background: var(--orange-light); border-radius: 16px; padding: 24px; border: 1px solid var(--orange-mid); position: relative; overflow: hidden; }
+  .ai-card::before { content: ''; position: absolute; top: 0; right: 0; width: 3px; height: 100%; background: var(--orange); }
+  .ai-card-icon { font-size: 28px; margin-bottom: 12px; }
+  .ai-card-title { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+  .ai-card-desc { font-size: 13px; color: var(--mid); line-height: 1.6; }
+  .steps { display: flex; gap: 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+  .step { flex: 1; padding: 24px 16px; text-align: center; border-left: 1px solid var(--border); }
+  .step:last-child { border-left: none; }
+  .step-num { width: 32px; height: 32px; background: var(--orange); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; margin: 0 auto 10px; }
+  .step-text { font-size: 12px; color: var(--mid); line-height: 1.4; }
+  .pricing-box { background: var(--orange); border-radius: 20px; padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; gap: 32px; }
+  .pricing-title { font-size: 22px; font-weight: 800; color: white; margin-bottom: 12px; }
+  .pricing-item { font-size: 14px; color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .pricing-item::before { content: '✓'; font-weight: 700; color: white; }
+  .pricing-note { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+  .pricing-amount { font-size: 64px; font-weight: 900; color: white; line-height: 1; }
+  .pricing-period { font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 4px; text-align: center; }
+  .reasons { display: flex; flex-direction: column; gap: 12px; }
+  .reason { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; background: var(--green-light); border-radius: 12px; border: 1px solid #D1FAE5; }
+  .reason-icon { font-size: 18px; flex-shrink: 0; }
+  .reason-text { font-size: 14px; color: var(--mid); line-height: 1.6; }
+  .reason-text strong { color: var(--dark); }
+  .beta-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .beta-card { background: var(--light); border-radius: 14px; padding: 24px 20px; border: 1px solid var(--border); text-align: center; }
+  .beta-card-icon { font-size: 28px; margin-bottom: 10px; }
+  .beta-card-title { font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+  .beta-card-desc { font-size: 12px; color: var(--gray); line-height: 1.5; }
+  .cta-section { background: var(--dark); padding: 56px; text-align: center; }
+  .cta-eyebrow { font-size: 12px; font-weight: 700; color: var(--orange); letter-spacing: 1.5px; margin-bottom: 16px; }
+  .cta-title { font-size: 32px; font-weight: 900; color: white; line-height: 1.2; margin-bottom: 16px; }
+  .cta-sub { font-size: 15px; color: #9CA3AF; line-height: 1.6; max-width: 480px; margin: 0 auto 32px; }
+  .cta-link { display: inline-block; background: var(--orange); color: white; font-size: 18px; font-weight: 700; padding: 16px 40px; border-radius: 14px; text-decoration: none; margin-bottom: 24px; }
+  .cta-note { font-size: 13px; color: #6B7280; }
+  .footer { padding: 24px 56px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); background: var(--light); }
+  .footer-brand { font-size: 14px; font-weight: 700; color: var(--dark); }
+  .footer-brand span { color: var(--orange); }
+  .footer-note { font-size: 12px; color: var(--gray); }
+  .mockup { border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: white; box-shadow: 0 4px 16px rgba(0,0,0,0.06); margin-top: 20px; }
+  .mockup-bar { background: var(--light); padding: 10px 14px; display: flex; gap: 6px; align-items: center; border-bottom: 1px solid var(--border); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .dot-r { background: #FC5858; } .dot-y { background: #FCBF04; } .dot-g { background: #29C840; }
+  .mockup-url { flex: 1; text-align: center; font-size: 11px; color: var(--gray); background: white; border-radius: 6px; padding: 3px 10px; border: 1px solid var(--border); font-family: monospace; }
+  .mock-content { padding: 20px; }
+  .mock-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .mock-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--orange-light), var(--orange-mid)); display: flex; align-items: center; justify-content: center; font-size: 22px; border: 2px solid var(--orange-mid); flex-shrink: 0; }
+  .mock-shop-name { font-size: 14px; font-weight: 700; color: var(--dark); }
+  .mock-badge { display: inline-block; background: var(--green-light); color: var(--green); font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 100px; border: 1px solid #D1FAE5; margin-right: 6px; }
+  .mock-products { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .mock-product { border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+  .mock-product-img { height: 52px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+  .mock-product-info { padding: 6px 8px; }
+  .mock-product-name { font-size: 9px; font-weight: 600; color: var(--dark); line-height: 1.3; }
+  .mock-product-price { font-size: 10px; font-weight: 700; color: var(--orange); margin-top: 2px; }
+  .mock-product-old { font-size: 9px; color: var(--gray); text-decoration: line-through; }
+  .highlight-box { background: var(--orange-light); border: 1px solid var(--orange-mid); border-radius: 14px; padding: 20px 24px; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="brand">
+      <div class="brand-icon">🏠</div>
+      <div><div class="brand-name">بيتي <span>.</span> <span style="font-size:16px;color:#6B7280">Bayti</span></div></div>
+    </div>
+    <div class="cover-badge">⚡ مرحلة تجريبية — انضمي الآن</div>
+  </div>
+  <div class="cover-tag">عرض مُعدّ خصيصاً لـ @auntyzkitchen_</div>
+  <h1 class="cover-title">مطبخك المنزلي،<br>الآن على الإنترنت. 🍽️</h1>
+  <p class="cover-sub">بيتي تربط الطباخات المنزليات مثلك بالمشترين في جميع أنحاء الإمارات — متجر احترافي، أدوات ذكاء اصطناعي، وإدارة طلبات، كل شيء في مكان واحد.</p>
+  <div class="cover-stats">
+    <div class="stat-card"><div class="stat-icon">🇦🇪</div><div class="stat-value">كل الإمارات</div><div class="stat-label">تغطية كاملة</div></div>
+    <div class="stat-card"><div class="stat-icon">🍽️</div><div class="stat-value">بائعون منزليون</div><div class="stat-label">فقط</div></div>
+    <div class="stat-card"><div class="stat-icon">🤖</div><div class="stat-value">5 أدوات AI</div><div class="stat-label">مجانية لك</div></div>
+    <div class="stat-card"><div class="stat-icon">💰</div><div class="stat-value">0% عمولة</div><div class="stat-label">مرحلة تجريبية</div></div>
+  </div>
+</div>
+
+<!-- BETA BANNER -->
+<div class="beta-banner">
+  <div class="beta-pill">تجريبي</div>
+  <div class="beta-text">المنصة <strong>تعمل بالكامل</strong> — الإطلاق الرسمي <strong>خلال 1-2 شهر</strong>. انضمي الآن واحصلي على <strong>أولوية الظهور</strong> عند الإطلاق.</div>
+</div>
+
+<!-- WHAT IS BAYTI -->
+<div class="section">
+  <div class="section-label">عن المنصة</div>
+  <h2 class="section-title">ما هي بيتي؟</h2>
+  <p class="section-intro">بيتي (Bayti) منصة إماراتية <strong>مخصصة حصرياً للبائعين المنزليين</strong> — تربطك مباشرةً بالمشترين في الإمارات. على عكس إنستقرام أو واتساب، بيتي تمنحك متجراً احترافياً كاملاً، نظام إدارة طلبات، وأدوات ذكاء اصطناعي — بدون أي تعقيدات تقنية.</p>
+
+  <div class="mockup">
+    <div class="mockup-bar">
+      <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+      <div class="mockup-url">bayti.ink/shop/auntyzkitchen</div>
+    </div>
+    <div class="mock-content">
+      <div class="mock-header">
+        <div class="mock-avatar">👩‍🍳</div>
+        <div>
+          <div class="mock-shop-name">مطبخ Aunty Z <span class="mock-badge">✓ موثق</span></div>
+          <div style="font-size:11px;color:var(--gray);margin-top:2px">📍 دبي، الإمارات</div>
+          <div style="font-size:11px;color:var(--orange);margin-top:2px">⭐ 4.9 · 89 طلب · ⚡ يرد خلال ساعتين</div>
+        </div>
+      </div>
+      <div class="mock-products">
+        <div class="mock-product">
+          <div class="mock-product-img" style="background:#fff4ee">🍛</div>
+          <div class="mock-product-info"><div class="mock-product-name">برياني دجاج</div><div class="mock-product-price">45 د.إ</div></div>
+        </div>
+        <div class="mock-product">
+          <div class="mock-product-img" style="background:#f0fdf4">🫓</div>
+          <div class="mock-product-info"><div class="mock-product-name">نان بالثوم (6 قطع)</div><div class="mock-product-old">30 د.إ</div><div class="mock-product-price">24 د.إ <span style="background:#FF5A1F;color:white;font-size:8px;padding:1px 4px;border-radius:4px">-20%</span></div></div>
+        </div>
+        <div class="mock-product">
+          <div class="mock-product-img" style="background:#fff4ee">🍮</div>
+          <div class="mock-product-info"><div class="mock-product-name">غلاب جامون</div><div class="mock-product-price">20 د.إ</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SELLER PAGE -->
+<div class="section">
+  <div class="section-label">متجرك</div>
+  <h2 class="section-title">كل شيء في صفحة متجرك</h2>
+  <p class="section-intro">صفحتك العامة هي المكان الذي يجدك فيه المشترون، يتصفحون قائمة أطباقك، ويضعون طلباتهم. كل ما يلي مشمول — جاهز للاستخدام، مجاناً.</p>
+  <div class="features-grid">
+    <div class="feature-item"><div class="feature-icon">🏠</div><div><div class="feature-title">هوية المتجر</div><div class="feature-desc">اسم متجرك، صورة البروفايل والشعار بشكل بارز</div></div></div>
+    <div class="feature-item"><div class="feature-icon">📝</div><div><div class="feature-title">وصف بلغتين</div><div class="feature-desc">عربي وإنجليزي — الذكاء الاصطناعي يترجم تلقائياً عند الحفظ</div></div></div>
+    <div class="feature-item"><div class="feature-icon">📸</div><div><div class="feature-title">معرض المتجر</div><div class="feature-desc">حتى 3 صور عرض تظهر في صفحتك العامة</div></div></div>
+    <div class="feature-item"><div class="feature-icon">📦</div><div><div class="feature-title">قائمة المنتجات</div><div class="feature-desc">صور، أوصاف، أسعار ووقت التحضير لكل طبق</div></div></div>
+    <div class="feature-item"><div class="feature-icon">🏷️</div><div><div class="feature-title">شارات الخصم</div><div class="feature-desc">أضف خصم % — السعر الأصلي يظهر مشطوباً للمشترين</div></div></div>
+    <div class="feature-item"><div class="feature-icon">🚚</div><div><div class="feature-title">توصيل مجاني تلقائي</div><div class="feature-desc">حدد حداً أدنى للطلب ويتحول التوصيل لمجاني تلقائياً</div></div></div>
+    <div class="feature-item"><div class="feature-icon">📍</div><div><div class="feature-title">رسوم التوصيل بالإمارة</div><div class="feature-desc">حدد رسوم التوصيل لكل إمارة على حدة</div></div></div>
+    <div class="feature-item"><div class="feature-icon">🕐</div><div><div class="feature-title">أوقات العمل</div><div class="feature-desc">أيامك وساعات عملك تظهر للمشترين قبل الطلب</div></div></div>
+    <div class="feature-item"><div class="feature-icon">⚡</div><div><div class="feature-title">شارة وقت الاستجابة</div><div class="feature-desc">متوسط وقت ردك يبني ثقة المشتري</div></div></div>
+    <div class="feature-item"><div class="feature-icon">⭐</div><div><div class="feature-title">تقييمات ومراجعات</div><div class="feature-desc">مراجعات العملاء الموثقة تظهر في صفحتك</div></div></div>
+    <div class="feature-item"><div class="feature-icon">🛒</div><div><div class="feature-title">حد أدنى للطلب</div><div class="feature-desc">حدد قيمة الطلب الأدنى — يظهر بوضوح قبل الدفع</div></div></div>
+    <div class="feature-item"><div class="feature-icon">🚀</div><div><div class="feature-title">رفع متعدد ذكي</div><div class="feature-desc">ارفع 20 صورة دفعة واحدة، جمّعها حسب المنتج، والذكاء الاصطناعي يكتب كل شيء</div></div></div>
+  </div>
+</div>
+
+<!-- AI TOOLS -->
+<div class="section" style="background:var(--light)">
+  <div class="section-label">مشمولة مجاناً</div>
+  <h2 class="section-title">5 أدوات ذكاء اصطناعي مجانية</h2>
+  <p class="section-intro">خمس أدوات مدعومة بالذكاء الاصطناعي توفر عليك الوقت وتساعدك على البيع أكثر — مشمولة في كل حساب بائع، بلا تكلفة.</p>
+  <div class="ai-grid">
+    <div class="ai-card"><div class="ai-card-icon">📸</div><div class="ai-card-title">وصف المنتج الذكي</div><div class="ai-card-desc">ارفع صورة طبقك ← الذكاء الاصطناعي يكتب وصفاً جذاباً بالعربي والإنجليزي تلقائياً. لا كتابة مطلوبة.</div></div>
+    <div class="ai-card"><div class="ai-card-icon">🎨</div><div class="ai-card-title">استوديو بيتي</div><div class="ai-card-desc">حوّل أي صورة طعام إلى صورة تسويقية احترافية — خلفيات مميزة، إضاءة — مجاناً تماماً.</div></div>
+    <div class="ai-card"><div class="ai-card-icon">💰</div><div class="ai-card-title">مستشار التسعير</div><div class="ai-card-desc">أدخل اسم طبقك وسعره ← الذكاء الاصطناعي يقارنه بالسوق الإماراتي ويخبرك هل هو منافس.</div></div>
+    <div class="ai-card"><div class="ai-card-icon">🌐</div><div class="ai-card-title">ترجمة تلقائية</div><div class="ai-card-desc">اكتب وصف متجرك بالعربي ← يترجم للإنجليزي فوراً. أو بالإنجليزي ← يترجم للعربي. تلقائي عند الحفظ.</div></div>
+    <div class="ai-card"><div class="ai-card-icon">🚀</div><div class="ai-card-title">رفع متعدد ذكي</div><div class="ai-card-desc">ارفع حتى 20 صورة دفعة واحدة، حددي أي صور لنفس المنتج، والذكاء الاصطناعي يكتب الاسم والوصف لكل مجموعة — أضيفي السعر فقط وانشري.</div></div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section">
+  <div class="section-label">آلية العمل</div>
+  <h2 class="section-title">كيف تعمل الطلبات؟</h2>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-text">المشتري يتصفح متجرك</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">يضع طلباً</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">تتلقين إشعاراً فورياً</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">تحضّرين وتوصّلين</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-text">يتأكد الدفع ✓</div></div>
+  </div>
+  <p style="margin-top:16px;font-size:13px;color:var(--gray)">كل شيء تديره من لوحة تحكم بسيطة — من هاتفك أو لابتوبك.</p>
+</div>
+
+<!-- PRICING -->
+<div class="section">
+  <div class="section-label">التكلفة</div>
+  <h2 class="section-title">كم يكلف؟</h2>
+  <div class="pricing-box">
+    <div>
+      <div class="pricing-title">مجاني تماماً خلال المرحلة التجريبية</div>
+      <div class="pricing-item">لا عمولة على أي مبيعة</div>
+      <div class="pricing-item">لا اشتراك شهري</div>
+      <div class="pricing-item">لا رسوم خفية</div>
+      <div class="pricing-item">كل درهم تكسبينه لك 100%</div>
+      <div class="pricing-note">التسعير لن يُطرح إلا بعد الإطلاق الرسمي — والبائعون الأوائل دائماً يحصلون على أفضل الأسعار.</div>
+    </div>
+    <div style="text-align:center;flex-shrink:0">
+      <div class="pricing-amount">مجاني</div>
+      <div class="pricing-period">خلال المرحلة التجريبية</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY AUNTY Z -->
+<div class="section" style="background:var(--light)">
+  <div class="section-label">لماذا أنت</div>
+  <h2 class="section-title">لماذا مطبخ Aunty Z مثالي لبيتي</h2>
+  <div class="reasons">
+    <div class="reason"><div class="reason-icon">✅</div><div class="reason-text"><strong>الأكل الهندي المنزلي الأصيل طلبه عالٍ جداً في الإمارات</strong> — ملايين المقيمين يبحثون عن "غار كا خانا" يومياً</div></div>
+    <div class="reason"><div class="reason-icon">✅</div><div class="reason-text"><strong>عندك مراجعات عملاء حقيقية على إنستقرام</strong> — هذه المصداقية تنتقل مباشرة لصفحتك على بيتي</div></div>
+    <div class="reason"><div class="reason-icon">✅</div><div class="reason-text"><strong>أكثر من سنتين من الخبرة</strong> — تعرفين منتجك وسوقك وزبائنك. بيتي فقط تضيف قناة احترافية</div></div>
+    <div class="reason"><div class="reason-icon">✅</div><div class="reason-text"><strong>استراتيجية الأسعار المعقولة</strong> — "خطة وجبات هندية بأسعار مناسبة" تنسجم تماماً مع توقعات مشترين بيتي</div></div>
+    <div class="reason"><div class="reason-icon">✅</div><div class="reason-text"><strong>أنت أصلاً تقومين بالتوصيل</strong> — بيتي لا تغير طريقة عملك، فقط تضيف طبقة احترافية فوقها</div></div>
+    <div class="reason"><div class="reason-icon">✅</div><div class="reason-text"><strong>"موصّل لبابك"</strong> — شعارك الحالي يطابق وعد بيتي للمشترين تماماً</div></div>
+  </div>
+</div>
+
+<!-- BETA -->
+<div class="section">
+  <div class="section-label">وين نحن الآن</div>
+  <h2 class="section-title">عن المرحلة التجريبية</h2>
+  <div class="beta-grid">
+    <div class="beta-card"><div class="beta-card-icon">🚀</div><div class="beta-card-title">إطلاق رسمي خلال 1-2 شهر</div><div class="beta-card-desc">الانضمام الآن يعني أنك جاهزة من اليوم الأول للإطلاق.</div></div>
+    <div class="beta-card"><div class="beta-card-icon">🌟</div><div class="beta-card-title">أولوية الظهور</div><div class="beta-card-desc">البائعون الأوائل يحصلون على مكانة مميزة وظهور أولوي عند الإطلاق.</div></div>
+    <div class="beta-card"><div class="beta-card-icon">🔐</div><div class="beta-card-title">استكشافي وآمن</div><div class="beta-card-desc">أنشئي حسابك، سجّلي متجرك، واستكشفي كل الميزات — بدون أي التزام.</div></div>
+  </div>
+  <div class="highlight-box" style="margin-top:20px">
+    <p style="font-size:14px;color:var(--mid);line-height:1.7">💡 <strong>يمكنك التسجيل اليوم، استكشاف المنصة بالسرعة التي تريدينها، والقرار يبقى بيدك — بدون أي ضغط أو التزام.</strong> نريدك أن تشعري بالثقة التامة قبل أي خطوة.</p>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-eyebrow">جاهزة تبدئين؟</div>
+  <h2 class="cta-title">أنشئي متجرك المجاني اليوم</h2>
+  <p class="cta-sub">سجّلي في دقائق. أضيفي متجرك وأطباقك، وشوفي كيف يبدو مطبخ Aunty Z على بيتي — قبل أي قرار.</p>
+  <a href="https://bayti.ink/sell" class="cta-link">bayti.ink/sell</a>
+  <div class="cta-note">أسئلة؟ ردّي على هذه الرسالة في أي وقت — يسعدنا نساعدك 😊</div>
+</div>
+
+<div class="footer">
+  <div class="footer-brand">🏠 <span>بيتي</span> · bayti.ink</div>
+  <div class="footer-note">مُعدّ خصيصاً لـ @auntyzkitchen_ · سبتمبر 2026</div>
+</div>
+
+</body>
+</html>
