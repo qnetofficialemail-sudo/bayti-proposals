@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بيتي — الأوائل العشرة</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --orange: #FF5A1F;
+    --orange-light: #fff4ee;
+    --orange-mid: #ffe4cc;
+    --dark: #111827;
+    --mid: #374151;
+    --gray: #6B7280;
+    --light: #F9FAFB;
+    --white: #FFFFFF;
+    --green: #059669;
+    --green-light: #ECFDF5;
+    --border: #E5E7EB;
+  }
+  body { font-family: 'Tajawal', sans-serif; background: var(--white); color: var(--dark); max-width: 820px; margin: 0 auto; font-size: 15px; line-height: 1.7; }
+
+  .hero { background: linear-gradient(135deg, #fff4ee 0%, #fff9f5 60%, #f0fdf4 100%); padding: 56px 56px 48px; border-bottom: 3px solid var(--orange); text-align: center; }
+  .brand { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 32px; }
+  .brand-icon { width: 44px; height: 44px; background: var(--orange); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+  .brand-name { font-size: 22px; font-weight: 800; color: var(--dark); }
+  .brand-name span { color: var(--orange); }
+
+  .counter-badge { display: inline-flex; align-items: center; gap: 10px; background: var(--dark); color: white; font-size: 13px; font-weight: 700; padding: 10px 22px; border-radius: 100px; margin-bottom: 24px; }
+  .counter-num { background: var(--orange); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+
+  .hero-title { font-size: 42px; font-weight: 900; color: var(--dark); line-height: 1.25; margin-bottom: 20px; }
+  .hero-title span { color: var(--orange); }
+  .hero-sub { font-size: 17px; color: var(--mid); line-height: 1.8; max-width: 560px; margin: 0 auto 36px; }
+
+  .offer-box { background: white; border: 2px solid var(--orange); border-radius: 20px; padding: 32px; max-width: 520px; margin: 0 auto; box-shadow: 0 8px 24px rgba(255,90,31,0.12); }
+  .offer-title { font-size: 20px; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+  .offer-desc { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 20px; }
+
+  .cta-button { display: inline-block; background: var(--orange); color: white; font-size: 17px; font-weight: 700; padding: 16px 44px; border-radius: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(255,90,31,0.35); }
+  .cta-note { font-size: 12px; color: var(--gray); margin-top: 14px; }
+
+  .section { padding: 48px 56px; border-bottom: 1px solid var(--border); }
+  .section-label { font-size: 11px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; text-align: center; }
+  .section-title { font-size: 28px; font-weight: 800; color: var(--dark); margin-bottom: 16px; line-height: 1.3; text-align: center; }
+  .section-intro { font-size: 15px; color: var(--mid); line-height: 1.8; max-width: 600px; margin: 0 auto 36px; text-align: center; }
+
+  .steps-flow { display: flex; flex-direction: column; gap: 0; }
+  .flow-step { display: flex; gap: 20px; padding: 24px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+  .flow-step:last-child { border-bottom: none; }
+  .flow-num { width: 44px; height: 44px; background: var(--orange); color: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; flex-shrink: 0; }
+  .flow-content { flex: 1; }
+  .flow-title { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+  .flow-desc { font-size: 14px; color: var(--gray); line-height: 1.7; }
+  .flow-time { display: inline-block; background: var(--orange-light); color: var(--orange); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 100px; margin-top: 8px; }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .compare-card { border-radius: 16px; padding: 24px; border: 1px solid var(--border); }
+  .compare-old { background: #FEF2F2; border-color: #FECACA; }
+  .compare-new { background: var(--green-light); border-color: #A7F3D0; }
+  .compare-label { font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
+  .compare-old .compare-label { color: #DC2626; }
+  .compare-new .compare-label { color: var(--green); }
+  .compare-item { font-size: 13px; color: var(--mid); line-height: 1.6; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px; }
+
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .why-card { background: var(--light); border-radius: 14px; padding: 22px; border: 1px solid var(--border); text-align: center; }
+  .why-icon { font-size: 30px; margin-bottom: 10px; }
+  .why-title { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+  .why-desc { font-size: 12px; color: var(--gray); line-height: 1.6; }
+
+  .urgency-box { background: var(--dark); border-radius: 20px; padding: 32px; text-align: center; }
+  .urgency-title { font-size: 20px; font-weight: 800; color: white; margin-bottom: 10px; }
+  .urgency-desc { font-size: 14px; color: #D1D5DB; line-height: 1.7; max-width: 480px; margin: 0 auto; }
+  .urgency-desc strong { color: var(--orange); }
+
+  .final-cta { background: linear-gradient(135deg, #fff4ee 0%, #fff9f5 100%); padding: 56px; text-align: center; }
+  .final-title { font-size: 30px; font-weight: 900; color: var(--dark); margin-bottom: 16px; line-height: 1.3; }
+  .final-sub { font-size: 15px; color: var(--mid); line-height: 1.7; max-width: 480px; margin: 0 auto 32px; }
+  .whatsapp-btn { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; font-size: 16px; font-weight: 700; padding: 16px 36px; border-radius: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(37,211,102,0.35); }
+
+  .footer { padding: 24px 56px; text-align: center; border-top: 1px solid var(--border); background: var(--light); }
+  .footer-brand { font-size: 14px; font-weight: 700; color: var(--dark); }
+  .footer-brand span { color: var(--orange); }
+  .footer-note { font-size: 12px; color: var(--gray); margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="brand">
+    <div class="brand-icon">🏠</div>
+    <div class="brand-name">بيتي <span>.</span> <span style="font-size:16px;color:#6B7280">Bayti</span></div>
+  </div>
+
+  <div class="counter-badge">
+    <span class="counter-num">10</span>
+    <span>مقاعد محدودة للبائعات الأوائل</span>
+  </div>
+
+  <h1 class="hero-title">لا تحتاجين ترفعين<br><span>ولا منتج واحد</span> بنفسك</h1>
+  <p class="hero-sub">أرسلي لنا صور منتجاتك على واتساب — وسنبني متجرك الكامل على بيتي بأنفسنا، خلال ساعة واحدة.</p>
+
+  <div class="offer-box">
+    <div class="offer-title">🎁 عرض الأوائل العشرة</div>
+    <div class="offer-desc">نبني متجرك بالكامل مجاناً: الصور، الأسماء، الأوصاف، الأسعار — كل شيء. أنتِ فقط ترسلين الصور وتوافقين على النتيجة النهائية.</div>
+    <a href="https://wa.me/971500000000" class="cta-button">📱 أرسلي صورك الآن</a>
+    <div class="cta-note">لأول 10 بائعات فقط — بدون أي التزام</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section">
+  <div class="section-label">كيف تعمل</div>
+  <h2 class="section-title">من الصور إلى متجر جاهز</h2>
+  <p class="section-intro">ثلاث خطوات بسيطة — كل الجهد التقني علينا، لا عليك.</p>
+
+  <div class="steps-flow">
+    <div class="flow-step">
+      <div class="flow-num">١</div>
+      <div class="flow-content">
+        <div class="flow-title">أرسلي صورك على واتساب</div>
+        <div class="flow-desc">حتى لو نفس الصور الموجودة على إنستقرام — لا حاجة لتصوير جديد أو تعديل. أرسليها كما هي.</div>
+        <div class="flow-time">دقيقتان من وقتك</div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">٢</div>
+      <div class="flow-content">
+        <div class="flow-title">نبني متجرك بالكامل</div>
+        <div class="flow-desc">فريق بيتي يرفع كل منتجاتك، يكتب الأسماء والأوصاف بالعربي والإنجليزي بمساعدة الذكاء الاصطناعي، وينسّق متجرك بشكل احترافي.</div>
+        <div class="flow-time">خلال ساعة واحدة</div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">٣</div>
+      <div class="flow-content">
+        <div class="flow-title">تفتحين الرابط وتوافقين</div>
+        <div class="flow-desc">نرسل لك رابط متجرك الجاهز. تراجعين الأسعار والتفاصيل، تطلبين أي تعديل تريدينه، ومتجرك ينطلق.</div>
+        <div class="flow-time">أنتِ من تقررين متى ينطلق</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARE -->
+<div class="section" style="background:var(--light)">
+  <div class="section-label">الفرق</div>
+  <h2 class="section-title">الطريقة القديمة مقابل الأوائل العشرة</h2>
+
+  <div class="compare-grid">
+    <div class="compare-card compare-old">
+      <div class="compare-label">❌ الطريقة المعتادة</div>
+      <div class="compare-item">📝 تسجّلين بنفسك وتتعلمين لوحة التحكم</div>
+      <div class="compare-item">📸 ترفعين كل منتج يدوياً واحداً تلو الآخر</div>
+      <div class="compare-item">✍️ تكتبين الوصف والاسم بنفسك</div>
+      <div class="compare-item">⏳ ساعات من الوقت قبل أن يصير متجرك جاهزاً</div>
+    </div>
+    <div class="compare-card compare-new">
+      <div class="compare-label">✅ عرض الأوائل العشرة</div>
+      <div class="compare-item">📱 ترسلين صورك فقط على واتساب</div>
+      <div class="compare-item">🤖 نرفع كل شيء نيابة عنك بمساعدة الذكاء الاصطناعي</div>
+      <div class="compare-item">✨ الأسماء والأوصاف تُكتب تلقائياً بلغتين</div>
+      <div class="compare-item">⚡ متجرك جاهز خلال ساعة واحدة</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY -->
+<div class="section">
+  <div class="section-label">لماذا هذا العرض</div>
+  <h2 class="section-title">لماذا نفعل هذا لأول 10 فقط؟</h2>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🎯</div>
+      <div class="why-title">نريد نبني بيتي معك</div>
+      <div class="why-desc">أول 10 بائعات يشكّلن أساس المنصة — ملاحظاتكن تحدد شكل بيتي القادم</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🌟</div>
+      <div class="why-title">أولوية دائمة</div>
+      <div class="why-desc">صفحة مميزة وظهور أولوي عند الإطلاق الرسمي — مدى الحياة</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💰</div>
+      <div class="why-title">مجاني بالكامل</div>
+      <div class="why-desc">لا عمولة، لا رسوم، لا التزام — فقط تجربة حقيقية بدون مخاطرة</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🤝</div>
+      <div class="why-title">خدمة شخصية حقيقية</div>
+      <div class="why-desc">لست مجرد رقم في نظام — نتعامل مع متجرك بأيدينا ونهتم بتفاصيله</div>
+    </div>
+  </div>
+</div>
+
+<!-- URGENCY -->
+<div class="section">
+  <div class="urgency-box">
+    <div class="urgency-title">⏰ 10 مقاعد فقط</div>
+    <div class="urgency-desc">هذا العرض <strong>محدود بأول 10 بائعات</strong> يتواصلن معنا. بعد اكتمال العدد، سيعود التسجيل للطريقة العادية.</div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2 class="final-title">جاهزة تكوني من الأوائل؟</h2>
+  <p class="final-sub">أرسلي صور منتجاتك الآن على واتساب، وسنتواصل معك خلال ساعات لبناء متجرك بالكامل.</p>
+  <a href="https://wa.me/971500000000" class="whatsapp-btn">💬 تواصلي معنا على واتساب</a>
+</div>
+
+<div class="footer">
+  <div class="footer-brand">🏠 <span>بيتي</span> · bayti.ink</div>
+  <div class="footer-note">حملة الأوائل العشرة · سبتمبر 2026</div>
+</div>
+
+</body>
+</html>
